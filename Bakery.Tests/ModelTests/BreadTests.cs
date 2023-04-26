@@ -38,6 +38,21 @@ public void GetTotalPrice_ReturnsCorrectTotalPriceForTwoLoavesOfBread()
     Assert.AreEqual(pricePerLoaf * 2, totalPrice);
 }
 
+[TestMethod]
+public void GetTotalPrice_ReturnsCorrectTotalPriceForSevenLoavesOfBread()
+{
+    // Arrange
+    decimal pricePerLoaf = 5.0m;
+    int numLoaves = 7;
+    BreadDeal breadDeal = new BreadDeal(pricePerLoaf, numLoaves);
+
+    // Act
+    decimal totalPrice = breadDeal.GetTotalPrice();
+
+    // Assert
+    Assert.AreEqual(pricePerLoaf * 5, totalPrice);
+}
+
   }
 
 }
